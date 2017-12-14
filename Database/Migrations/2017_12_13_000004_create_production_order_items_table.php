@@ -12,7 +12,7 @@ class CreateProductionOrderItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('production_order_items', function (Blueprint $table) {
+        Schema::create('mod_erp_production_order_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_order_id');
             $table->integer('recipe_id');
@@ -30,6 +30,6 @@ class CreateProductionOrderItemsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('production_order_items');
+        Schema::drop('mod_erp_production_order_items');
     }
 }

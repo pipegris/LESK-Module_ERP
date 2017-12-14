@@ -12,7 +12,7 @@ class CreateRecipesTable extends Migration
      */
     public function up()
     {
-        Schema::create('recipes', function (Blueprint $table) {
+        Schema::create('mod_erp_recipes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('version');
@@ -29,6 +29,6 @@ class CreateRecipesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('recipes');
+        Schema::drop('mod_erp_recipes');
     }
 }

@@ -12,7 +12,7 @@ class CreateProductionOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('production_orders', function (Blueprint $table) {
+        Schema::create('mod_erp_production_orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('code');
             $table->string('description');
@@ -30,6 +30,6 @@ class CreateProductionOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('production_orders');
+        Schema::drop('mod_erp_production_orders');
     }
 }
