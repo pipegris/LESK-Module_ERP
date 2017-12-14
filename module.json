@@ -1,0 +1,10 @@
+{
+  "name": "ERP",
+  "slug": "erp",
+  "namespace": "ERP",
+  "version": "1.0",
+  "author": "Andrés Felipe Grisales",
+  "license": "GPL-3.0",
+  "description": "A simple erp for Automation System's Integration 2017.",
+  "order": 100
+  }
