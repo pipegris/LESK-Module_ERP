@@ -16,6 +16,9 @@ class CreateRecipesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('version');
+            $table->integer('stirring_time');
+            $table->integer('reaction_time');
+            $table->integer('reaction_temp');
             $table->string('description');
             $table->boolean('enabled')->default(0);
             $table->timestamps();

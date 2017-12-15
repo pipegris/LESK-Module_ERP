@@ -1,4 +1,4 @@
-<?php namespace App\Modules\ERP\Models;
+<?php namespace App\Modules\Erp\Models;
 
 use App\Traits\BaseModelTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +19,6 @@ class Recipe extends Model
 
     public function items()
     {
-        return $this->hasMany('App\Modules\ERP\Models\RecipeItem', 'recipe_id');
+        return $this->hasMany('App\Modules\Erp\Models\RecipeItem', 'recipe_id');
     }
 }

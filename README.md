@@ -1,9 +1,9 @@
-# ERP module
+# Erp module
 
 To deploy simply clone the repository into the ```Modules``` directory from the base or root [LESK](https://github.com/sroutier/laravel-enterprise-starter-kit) install, as shown below:
 ```
 $ cd <MySuperProjectBasedOnLESK>
-$ git clone https://github.com/pipegris/LESK-Module_ERP app/Modules/ERP
+$ git clone https://github.com/pipegris/LESK-Module_Erp app/Modules/Erp
 ```
 
 Then make sure to optimize the master module definition, from the base directory, with:

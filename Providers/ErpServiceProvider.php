@@ -1,15 +1,15 @@
 <?php
-namespace App\Modules\ERP\Providers;
+namespace App\Modules\Erp\Providers;
 
 use App;
 use Lang;
 use View;
 use Illuminate\Support\ServiceProvider;
 
-class ERPServiceProvider extends ServiceProvider
+class ErpServiceProvider extends ServiceProvider
 {
 	/**
-	 * Register the ERP module service provider.
+	 * Register the Erp module service provider.
 	 *
 	 * @return void
 	 */
@@ -18,13 +18,13 @@ class ERPServiceProvider extends ServiceProvider
 		// This service provider is a convenient place to register your modules
 		// services in the IoC container. If you wish, you may make additional
 		// methods or service providers to keep the code more focused and granular.
-		App::register('App\Modules\ERP\Providers\RouteServiceProvider');
+		App::register('App\Modules\Erp\Providers\RouteServiceProvider');
 
 		$this->registerNamespaces();
 	}
 
 	/**
-	 * Register the ERP module resource namespaces.
+	 * Register the Erp module resource namespaces.
 	 *
 	 * @return void
 	 */
@@ -46,7 +46,9 @@ class ERPServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('erp.php'),
         ], 'config');
-
+        $this->publishes([
+            __DIR__.'/../Assets' => public_path('assets/modules/erp'),
+        ], 'modules');
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
             __DIR__.'/../config/config.php', 'erp'

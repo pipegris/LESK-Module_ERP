@@ -1,26 +1,14 @@
-<?php namespace App\Modules\ERP\Http\Controllers;
+<?php namespace App\Modules\Erp\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\AuditRepository as Audit;
 use Auth;
-use Adldap\Adldap;
-use Illuminate\Support\Facades\Log;
-use Flash;
-use App\Modules\ERP\Utils\Utility;
 use Illuminate\Contracts\Foundation\Application;
 
-class ERPController extends Controller
+class ErpController extends Controller
 {
-
-    /**
-     * The connection options for LDAP.
-     *
-     * @var Array
-     */
-
-    protected $ldapConOp;
 
     /**
      * Custom constructor to get a handle on the Application instance.

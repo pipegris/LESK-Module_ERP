@@ -6,7 +6,7 @@
 @section('content')
     <div class='row'>
         <div class='col-md-12'>
-            HOME Erp
+            Recipes List
             <br>
 
         </div><!-- /.col -->

@@ -1,4 +1,4 @@
-<?php namespace App\Modules\ERP\Models;
+<?php namespace App\Modules\Erp\Models;
 
 use App\Traits\BaseModelTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +19,6 @@ class ProductionOrder extends Model
 
     public function items()
     {
-        return $this->hasMany('App\Modules\ERP\Models\ProductionOrderItem', 'production_order_id');
+        return $this->hasMany('App\Modules\Erp\Models\ProductionOrderItem', 'production_order_id');
     }
 }

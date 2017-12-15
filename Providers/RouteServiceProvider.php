@@ -1,5 +1,5 @@
 <?php
-namespace App\Modules\ERP\Providers;
+namespace App\Modules\Erp\Providers;
 
 use Sroutier\LESKModules\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -13,7 +13,7 @@ class RouteServiceProvider extends ServiceProvider
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'App\Modules\ERP\Http\Controllers';
+	protected $namespace = 'App\Modules\Erp\Http\Controllers';
 
 	/**
 	 * Define your module's route model bindings, pattern filters, etc.
@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
 	{
 		$router->group(['namespace' => $this->namespace], function($router)
 		{
-			require config('modules.path').'/ERP/Http/routes.php';
+			require config('modules.path').'/Erp/Http/routes.php';
 		});
 	}
 }

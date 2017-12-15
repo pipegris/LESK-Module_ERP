@@ -13,7 +13,7 @@
 
 //Route::group(['prefix' => 'erp'], function() {
 //	Route::get('/', function() {
-//		dd('This is the ERP module index page.');
+//		dd('This is the Erp module index page.');
 //	});
 //});
 
@@ -37,10 +37,14 @@
 // Routes in this group must be authorized.
 Route::group(['middleware' => 'authorize'], function () {
 
-    // ERP routes
+    // Erp routes
     Route::group(['prefix' => 'erp'], function () {
-        Route::get( '/',               ['as' => 'erp.home',   'uses' => 'ERPController@home']);
-    }); // End of ERP group
+        Route::get( '/',                    ['as' => 'erp.home',   'uses' => 'ErpController@home']);
+        Route::get( '/products',            ['as' => 'erp.products',   'uses' => 'ProductsController@home']);
+        Route::get( '/recipes',             ['as' => 'erp.recipes',   'uses' => 'RecipesController@home']);
+        Route::get( '/production_orders',   ['as' => 'erp.production_orders',   'uses' => 'ProductionOrdersController@home']);
+        Route::get( '/process',   ['as' => 'erp.process',   'uses' => 'ProcessController@home']);
+    }); // End of Erp group
 
 
 }); // end of AUTHORIZE middleware group

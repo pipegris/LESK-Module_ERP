@@ -3,10 +3,12 @@
 return [
 
     'audit-log'           => [
-        'category'              => 'ERP',
-        'msg-home'              => 'Accessed ERP.',
-        'msg-search'            => 'Searched for: :query.',
-        'msg-show'              => 'Displayed: :dn.',
+        'category'              => 'Erp',
+        'msg-home'              => 'Accessed Erp.',
+        'msg-products'            => 'Accessed Products.',
+        'msg-recipes'              => 'Accessed Recipes.',
+        'msg-production_orders'    => 'Accessed Production Orders.',
+        'msg-process'    => 'Accessed Process view.',
     ],
 
     'status'           => [
@@ -41,21 +43,45 @@ return [
 
     'page'              => [
         'home'              => [
-            'title'                     => 'ERP',
+            'title'                     => 'Erp',
             'description'               => 'Simple Enterprise Resource Planer.',
             'box-title'                 => 'Search: ',
         ],
-        'show-group'   => [
-            'title'                     => 'AD Inspector | Show group',
-            'description'               => 'Displaying AD group: :groupName.',
+        'products'   => [
+            'index'   => [
+                'title'                     => 'Erp | Supplies',
+                'description'               => 'Supplies catalog.'
+            ],
+            'show'   => [
+                'title'                     => 'Erp | Supplies | :productName',
+                'description'               => 'Displaying supply.'
+            ]
         ],
-        'show-user'   => [
-            'title'                     => 'AD Inspector | Show user',
-            'description'               => 'Displaying AD user: :userName.',
+        'recipes'   => [
+            'index'   => [
+                'title'                     => 'Erp | Recipes',
+                'description'               => 'Recipes catalog.'
+            ],
+            'show'   => [
+                'title'                     => 'Erp | Recipes | :recipeName',
+                'description'               => 'Displaying recipe.'
+            ]
         ],
-        'show-misc'   => [
-            'title'                     => 'AD Inspector | Show misc',
-            'description'               => 'Displaying misc AD entry.',
+        'production_orders'   => [
+            'index'   => [
+                'title'                     => 'Erp | Production Orders',
+                'description'               => 'Production Orders list.'
+            ],
+            'show'   => [
+                'title'                     => 'Erp | Production Order',
+                'description'               => 'Displaying production order.'
+            ]
+        ],
+        'process'   => [
+            'index'   => [
+                'title'                     => 'Erp | Process view',
+                'description'               => 'Production Order execution visualizer.'
+            ]
         ],
     ],
 

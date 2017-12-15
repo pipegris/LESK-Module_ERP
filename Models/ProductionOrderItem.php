@@ -1,4 +1,4 @@
-<?php namespace App\Modules\ERP\Models;
+<?php namespace App\Modules\Erp\Models;
 
 use App\Traits\BaseModelTrait;
 use Illuminate\Database\Eloquent\Model;

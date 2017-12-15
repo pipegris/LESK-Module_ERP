@@ -1,7 +1,7 @@
 {
-  "name": "ERP",
+  "name": "Erp",
   "slug": "erp",
-  "namespace": "ERP",
+  "namespace": "Erp",
   "version": "1.0",
   "author": "Andrés Felipe Grisales",
   "license": "GPL-3.0",
