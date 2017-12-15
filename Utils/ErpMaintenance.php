@@ -12,8 +12,8 @@ class ErpMaintenance implements ModuleMaintenanceInterface
     static public function initialize()
     {
         DB::transaction(function () {
-//            self::migrate('erp');
-//            self::seed('erp');
+            self::migrate('erp');
+            self::seed('erp');
             $permUseErp = self::createPermission(  'use-erp',
                 'Use Erp',
                 'Allows a user to use the Erp module.');
@@ -23,9 +23,9 @@ class ErpMaintenance implements ModuleMaintenanceInterface
                 'erp',
                 'App\Modules\Erp\Http\Controllers\ErpController@home',
                 $permUseErp );
-            $routeProducts = self::createRoute( 'erp.products',
-                'erp/products',
-                'App\Modules\Erp\Http\Controllers\ProductsController@home',
+            $routeSupplies = self::createRoute( 'erp.supplies',
+                'erp/supplies',
+                'App\Modules\Erp\Http\Controllers\SuppliesController@home',
                 $permUseErp );
             $routeRecipes = self::createRoute( 'erp.recipes',
                 'erp/recipes',
@@ -49,7 +49,7 @@ class ErpMaintenance implements ModuleMaintenanceInterface
             // Create menu system for the module
             $menuToolsContainer = self::createMenu( 'erp-tools-container', 'Erp Tools', 10, 'ion ion-settings', 'home', true );
             self::createMenu( 'erp.home', 'Erp', 0, 'fa fa-book', $menuToolsContainer, false, $routeHome );
-            self::createMenu( 'erp.products', 'Products', 1, 'fa fa-cube', $menuToolsContainer, false, $routeProducts );
+            self::createMenu( 'erp.supplies', 'Supplies', 1, 'fa fa-cube', $menuToolsContainer, false, $routeSupplies );
             self::createMenu( 'erp.recipes', 'Recipes', 2, 'fa fa-group', $menuToolsContainer, false, $routeRecipes );
             self::createMenu( 'erp.production_orders', 'Production Orders', 3, 'fa fa-clipboard', $menuToolsContainer, false, $routeProductionOrders );
             self::createMenu( 'erp.process', 'Process View', 4, 'fa fa-play-circle', $menuToolsContainer, false, $routeProcess );
@@ -61,7 +61,7 @@ class ErpMaintenance implements ModuleMaintenanceInterface
         DB::transaction(function () {
 
             self::destroyMenu('erp.home');
-            self::destroyMenu('erp.products');
+            self::destroyMenu('erp.supplies');
             self::destroyMenu('erp.recipes');
             self::destroyMenu('erp.production_orders');
             self::destroyMenu('erp.process');
@@ -70,13 +70,13 @@ class ErpMaintenance implements ModuleMaintenanceInterface
             self::destroyRole('erp-users');
 
             self::destroyRoute('erp.home');
-            self::destroyRoute('erp.products');
+            self::destroyRoute('erp.supplies');
             self::destroyRoute('erp.recipes');
             self::destroyRoute('erp.production_orders');
             self::destroyRoute('erp.process');
             self::destroyPermission('use-erp');
 
-//            self::rollbackMigration('active_directory_inspector');
+            self::rollbackMigration('erp');
         }); // End of DB::transaction(....)
     }
 
@@ -84,7 +84,7 @@ class ErpMaintenance implements ModuleMaintenanceInterface
     {
         DB::transaction(function () {
             self::enableMenu('erp.home');
-            self::enableMenu('erp.products');
+            self::enableMenu('erp.supplies');
             self::enableMenu('erp.recipes');
             self::enableMenu('erp.production_orders');
             self::enableMenu('erp.process');
@@ -97,7 +97,7 @@ class ErpMaintenance implements ModuleMaintenanceInterface
     {
         DB::transaction(function () {
             self::disableMenu('erp.home');
-            self::disableMenu('erp.products');
+            self::disableMenu('erp.supplies');
             self::disableMenu('erp.recipes');
             self::disableMenu('erp.production_orders');
             self::disableMenu('erp.process');

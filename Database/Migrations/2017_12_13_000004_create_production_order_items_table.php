@@ -14,7 +14,7 @@ class CreateProductionOrderItemsTable extends Migration
     {
         Schema::create('mod_erp_production_order_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_order_id');
+            $table->integer('production_order_id');
             $table->integer('recipe_id');
             $table->integer('quantity');
             $table->timestamp('start_time');

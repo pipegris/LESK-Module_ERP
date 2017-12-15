@@ -1,15 +1,15 @@
 <?php namespace App\Modules\Erp\Http\Controllers;
 
+use App\Modules\Erp\Models\Supply;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
-use App\Modules\Erp\Models\Recipe;
 use App\Http\Controllers\Controller;
 use App\Repositories\AuditRepository as Audit;
 use Illuminate\Contracts\Foundation\Application;
 
-class RecipesController extends Controller
+class SuppliesController extends Controller
 {
 
     /**
@@ -21,7 +21,7 @@ class RecipesController extends Controller
     {
         parent::__construct($app, $audit, 'erp');
         // Set default crumbtrail for controller.
-        session(['crumbtrail.leaf' => 'erp.recipes']);
+        session(['crumbtrail.leaf' => 'erp.supplies']);
     }
 
 
@@ -29,11 +29,12 @@ class RecipesController extends Controller
     {
         Audit::log(Auth::user()->id, trans('erp::general.audit-log.category'), trans('erp::general.audit-log.msg-supplies'));
 
-        $page_title = trans('erp::general.page.recipes.index.title');
-        $page_description = trans('erp::general.page.recipes.index.description');
+        $page_title = trans('erp::general.page.supplies.index.title');
+        $page_description = trans('erp::general.page.supplies.index.description');
 
-        return view('erp::recipes.index', compact('page_title', 'page_description'));
+        return view('erp::supplies.index', compact('page_title', 'page_description'));
     }
+
 
 
     /**
@@ -42,6 +43,6 @@ class RecipesController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function data() {
-        return Datatables::of(Recipe::query())->make(true);
+        return Datatables::of(Supply::query())->make(true);
     }
 }

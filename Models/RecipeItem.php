@@ -15,6 +15,6 @@ class RecipeItem extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'recipe_id', 'product_id', 'quantity', 'enabled'];
+    protected $fillable = ['name', 'recipe_id', 'supply_id', 'quantity', 'enabled'];
 
 }

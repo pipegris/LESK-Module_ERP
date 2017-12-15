@@ -5,7 +5,7 @@ return [
     'audit-log'           => [
         'category'              => 'Erp',
         'msg-home'              => 'Accessed Erp.',
-        'msg-products'            => 'Accessed Products.',
+        'msg-supplies'            => 'Accessed Supplies.',
         'msg-recipes'              => 'Accessed Recipes.',
         'msg-production_orders'    => 'Accessed Production Orders.',
         'msg-process'    => 'Accessed Process view.',
@@ -47,13 +47,13 @@ return [
             'description'               => 'Simple Enterprise Resource Planer.',
             'box-title'                 => 'Search: ',
         ],
-        'products'   => [
+        'supplies'   => [
             'index'   => [
                 'title'                     => 'Erp | Supplies',
                 'description'               => 'Supplies catalog.'
             ],
             'show'   => [
-                'title'                     => 'Erp | Supplies | :productName',
+                'title'                     => 'Erp | Supplies | :supplyName',
                 'description'               => 'Displaying supply.'
             ]
         ],

@@ -3,14 +3,14 @@
 use App\Traits\BaseModelTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Supply extends Model
 {
     use BaseModelTrait;
 
     /**
      * @var string
      */
-    protected $table = 'mod_erp_products';
+    protected $table = 'mod_erp_supplies';
 
     /**
      * @var array

@@ -15,7 +15,7 @@ class CreateRecipeItemsTable extends Migration
         Schema::create('mod_erp_recipe_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('recipe_id');
-            $table->integer('product_id');
+            $table->integer('supply_id');
             $table->integer('quantity');
             $table->boolean('enabled')->default(0);
             $table->timestamps();

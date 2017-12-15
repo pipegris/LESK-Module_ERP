@@ -9,14 +9,12 @@
 @section('content')
     <div class='row'>
         <div class='col-md-12'>
-            <table class="table table-bordered" id="recipes-table">
+            <table class="table table-bordered" id="supplies-table">
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Stirring Time</th>
-                    <th>Reaction Time</th>
-                    <th>Reaction Temperature</th>
+                    <th>Description</th>
                     <th>Created At</th>
                     <th>Updated At</th>
                 </tr>
@@ -27,23 +25,21 @@
         </div><!-- /.col -->
 
     </div><!-- /.row -->
-@endsection
+    @endsection
 
 
 <!-- Optional bottom section for modals etc... -->
 @section('body_bottom')
     <script>
         $(function() {
-            $('#recipes-table').DataTable({
+            $('#supplies-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('erp.recipes.data') !!}',
+                ajax: '{!! route('erp.supplies.data') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
                     { data: 'name', name: 'name' },
-                    { data: 'stirring_time', name: 'stirring_time' },
-                    { data: 'reaction_time', name: 'reaction_time' },
-                    { data: 'reaction_temp', name: 'reaction_temp' },
+                    { data: 'description', name: 'description' },
                     { data: 'created_at', name: 'created_at' },
                     { data: 'updated_at', name: 'updated_at' }
                 ]
